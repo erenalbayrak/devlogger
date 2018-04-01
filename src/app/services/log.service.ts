@@ -27,4 +27,25 @@ export class LogService {
   setFromLog(log: Log) {
     this.logSource.next(log);
   }
+
+  addLog(log: Log) {
+    this.logs.unshift(log);
+  }
+
+  updateLog(log: Log) {
+    this.logs.forEach((actValue, index) => {
+      if (log.id === actValue.id) {
+        this.logs.splice(index, 1);
+      }
+    });
+    this.logs.unshift(log);
+  }
+
+  deleteLog(log: Log) {
+    this.logs.forEach((actValue, index) => {
+      if (log.id === actValue.id) {
+        this.logs.splice(index, 1);
+      }
+    });
+  }
 }

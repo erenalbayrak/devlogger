@@ -22,4 +22,8 @@ export class LogsComponent implements OnInit {
   onSelect(log: Log) {
     this.logService.setFromLog(log);
   }
+
+  onDelete(log: Log) {
+    this.logService.deleteLog(log);
+  }
 }
